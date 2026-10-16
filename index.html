@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNAF Hub - Güvenlik Arşivi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #050505;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* CRT Tarama Çizgileri Efekti (Retro Güvenlik Kamerası Hissi) */
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 999;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            animation: flicker 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .game-card {
+            background: #111;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .game-card:hover {
+            border-color: #00ff00;
+            background: #1a1a1a;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .game-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #00ff00;
+        }
+
+        .game-card p {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .status {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* Hafif titreme (flicker) animasyonu */
+        @keyframes flicker {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            52% { opacity: 0.4; }
+            54% { opacity: 1; }
+            80% { opacity: 0.8; }
+            100% { opacity: 0.95; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>FAZBEAR SECURITY HUB</h1>
+        <div class="subtitle">Sistem Durumu: Çevrimiçi // Arşiv Erişimi Açık</div>
+        
+        <div class="game-grid">
+            <!-- Oyunlar eklendikçe buradaki linkler çoğaltılacak -->
+            <a href="fnaf1/index.html" class="game-card">
+                <h3>FNAF 1</h3>
+                <p>Güvenlik Ofisi - Vardiya 1</p>
+            </a>
+            <a href="fnaf2/index.html" class="game-card">
+                <h3>FNAF 2</h3>
+                <p>Yeni Lokasyon - Maske Protokolü</p>
+            </a>
+            <a href="fnaf3/index.html" class="game-card">
+                <h3>FNAF 3</h3>
+                <p>Fazbear's Fright - Korku Tüneli</p>
+            </a>
+            <a href="fnaf4/index.html" class="game-card">
+                <h3>FNAF 4</h3>
+                <p>Kabus Odası - El Feneri</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="status">CLOUDFLARE PAGES - SECURE GATEWAY</div>
+
+</body>
+</html>
